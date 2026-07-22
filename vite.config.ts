@@ -42,7 +42,7 @@ export default defineConfig({
     UniPolyfill(),
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
-      imports: ['vue', '@vueuse/core', 'uni-app'],
+      imports: ['vue', 'uni-app'],
       dts: 'dts/auto-imports.d.ts',
       dirs: ['composables', 'stores', 'utils'],
       vueTemplate: true,

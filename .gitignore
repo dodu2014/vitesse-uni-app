@@ -21,5 +21,5 @@ dist
 *.sw?
 
 # unh
-pages.json
-manifest.json
+# pages.json
+# manifest.json

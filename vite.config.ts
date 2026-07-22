@@ -15,23 +15,36 @@ export default defineConfig({
     UniHelperManifest(),
     // https://uni-helper.js.org/vite-plugin-uni-pages
     UniHelperPages({
-      dts: 'src/uni-pages.d.ts',
+      dts: 'dts/uni-pages.d.ts',
+      dir: 'pages',
+      outDir: '',
     }),
     // https://uni-helper.js.org/vite-plugin-uni-layouts
-    UniHelperLayouts(),
+    UniHelperLayouts({
+      layoutDir: 'layouts',
+    }),
     // https://uni-helper.js.org/vite-plugin-uni-components
     UniHelperComponents({
-      dts: 'src/components.d.ts',
+      dts: 'dts/components.d.ts',
       directoryAsNamespace: true,
+      dirs: ['components'],
     }),
     // https://uni-helper.js.org/plugin-uni
-    Uni(),
+    Uni({
+      // vueOptions: {
+      //   template: {
+      //     compilerOptions: {
+      //       isCustomElement: (tag) => tag.startsWith('uni-'),
+      //     },
+      //   },
+      // },
+    }),
     UniPolyfill(),
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
       imports: ['vue', '@vueuse/core', 'uni-app'],
-      dts: 'src/auto-imports.d.ts',
-      dirs: ['src/composables', 'src/stores', 'src/utils'],
+      dts: 'dts/auto-imports.d.ts',
+      dirs: ['composables', 'stores', 'utils'],
       vueTemplate: true,
     }),
     // https://github.com/antfu/unocss

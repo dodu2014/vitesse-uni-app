@@ -12,6 +12,8 @@ export default defineManifestConfig({
     usingComponents: true,
     nvueStyleCompiler: 'uni-app',
     compilerVersion: 3,
+    darkmode: true,
+    themeLocation: 'theme.json',
     splashscreen: {
       alwaysShowBeforeRender: true,
       waiting: true,
